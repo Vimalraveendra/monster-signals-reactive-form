@@ -12,8 +12,8 @@ export class CardListService{
     private httpClient = inject(HttpClient)
 
     fetchMonsters() {
-        return this.httpClient.get("https://jsonplaceholder.typicode.com/users")
-        // return this.fetchPlaces('http://localhost:3000/places','Something went wrong fetching available places. Please try again.')
+        return this.httpClient.get<IMonster[]>("https://jsonplaceholder.typicode.com/users")
+       
       }
     
 }
