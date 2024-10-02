@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { CardComponent } from "./card/card.component";
+import { Component,input } from '@angular/core';
+import { IMonster } from '../model/monster.model';
 
 @Component({
   selector: 'app-card-list',
   standalone: true,
-  imports: [CardComponent],
+  imports: [],
   templateUrl: './card-list.component.html',
   styleUrl: './card-list.component.scss'
 })
 export class CardListComponent {
-
+  monster =input.required<IMonster>();
 }

@@ -1,4 +1,8 @@
 <header class="header">
   <h1>Monsters Rolodex</h1>
 </header>
-<app-card-list />
+<main class="card-list">
+  @for(monsterEl of monsters(); track monsterEl.id){
+  <app-card-list [monster]="monsterEl" />
+  }
+</main>

@@ -1,0 +1,17 @@
+.header{
+    text-align: center;
+
+h1{
+    font-family: 'Bigelow Rules', cursive;
+    font-size:72px;
+    color:#0c5eca;
+  }
+}
+  .card-list {
+    width: 85vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:20px;
+  
+  }
