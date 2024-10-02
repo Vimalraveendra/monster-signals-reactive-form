@@ -1,5 +1,6 @@
 <header class="header">
   <h1>Monsters Rolodex</h1>
+  <app-search-box (searchTextEvent)="onSetSearchText($event)" />
 </header>
 <main class="card-list">
   @for(monsterEl of monsters(); track monsterEl.id){

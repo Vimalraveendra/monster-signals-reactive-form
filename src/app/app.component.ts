@@ -4,11 +4,13 @@ import { RouterOutlet } from '@angular/router';
 import { CardListService } from './card-list/card-list.service';
 import { IMonster } from './model/monster.model';
 import { CardListComponent } from './card-list/card-list.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardListComponent],
+  imports: [RouterOutlet, CardListComponent,SearchBoxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -17,6 +19,7 @@ export class AppComponent  implements OnInit{
   monsters=signal<IMonster[]>([]);
   isFetching=signal(false);
   error = signal('');
+  filterSearchText=signal('');
     private cardListService = inject(CardListService)
 
   ngOnInit() {
@@ -30,6 +33,11 @@ export class AppComponent  implements OnInit{
     
         this.isFetching.set(false)
       }
+
      })
   }
+  onSetSearchText(text:string){
+    this.filterSearchText.set(text)
+  }
+
 }
