@@ -1,8 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CardListComponent } from "./card-list/card-list.component";
+
 import { CardListService } from './card-list/card-list.service';
 import { IMonster } from './model/monster.model';
+import { CardListComponent } from './card-list/card-list.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ export class AppComponent  implements OnInit{
         this.error.set(err.message)
       },
       complete:()=>{
-        console.log(this.monsters()),
+    
         this.isFetching.set(false)
       }
      })
