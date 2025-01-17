@@ -3,7 +3,7 @@
   <app-search-box (searchTextEvent)="onSetSearchText($event)" />
 </header>
 <main class="card-list">
-  @for(monsterEl of monsters(); track monsterEl.id){
+  @for(monsterEl of monsters()| filter:filterSearchText(); track monsterEl.id){
   <app-card-list [monster]="monsterEl" />
   }
 </main>
